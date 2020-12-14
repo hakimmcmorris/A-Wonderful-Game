@@ -129,11 +129,24 @@ public class PlayerMovement : MonoBehaviour
     {
         LayerMask layerWall = LayerMask.GetMask("Wall");
 
-        RaycastHit2D hit1 = Physics2D.Raycast(transform.position, Vector2.right, 0.6f, layerWall);
+        RaycastHit2D hit1 = Physics2D.Raycast(transform.position, Vector2.right, 0.57f, layerWall);
         RaycastHit2D hit2 = Physics2D.Raycast(transform.position, Vector2.left, 0.6f, layerWall);
 
         if (hit1 || hit2)
         {
+            if (PlayerRB.velocity.y < -1.99f)
+            {
+                if (hit1)
+                {
+                    PlayerSprite.flipX = false;
+                }
+                else
+                {
+                    PlayerSprite.flipX = true;
+                }
+
+            }
+
             return true;
         }
 
@@ -145,8 +158,7 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.red;
 
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - 0.8f, 0));
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + 0.6f, transform.position.y, 0));
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + 0.57f, transform.position.y, 0));
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x - 0.6f, transform.position.y, 0));
-
     }
 }
