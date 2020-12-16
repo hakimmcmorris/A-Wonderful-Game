@@ -1361,64 +1361,32 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1537585684}
     m_ColliderPaths:
-    - - X: -40000000
-        Y: 55999900
-      - X: -39999959
-        Y: 55999900
-      - X: -39999900
-        Y: 55999959
-      - X: -39999900
-        Y: 64000045
-      - X: -39999959
-        Y: 64000104
-      - X: -56000041
-        Y: 64000104
-      - X: -56000100
-        Y: 64000045
-      - X: -56000100
-        Y: 55999959
-      - X: -56000041
-        Y: 55999900
-      - X: -56000000
-        Y: 55999900
-      - X: -56000000
-        Y: -15999999
-      - X: -40000000
-        Y: -15999999
     - - X: 64000004
-        Y: 55999900
-      - X: 64000045
-        Y: 55999900
-      - X: 64000104
-        Y: 55999959
-      - X: 64000104
-        Y: 64000045
-      - X: 64000045
-        Y: 64000104
-      - X: 47999955
-        Y: 64000104
-      - X: 47999896
-        Y: 64000045
-      - X: 47999896
-        Y: 55999959
-      - X: 47999955
-        Y: 55999900
+        Y: 64000004
       - X: 47999996
-        Y: 55999900
+        Y: 64000004
       - X: 47999996
         Y: -15999999
       - X: 64000004
         Y: -15999999
+    - - X: -40000000
+        Y: 64000004
+      - X: -56000000
+        Y: 64000004
+      - X: -56000000
+        Y: -15999999
+      - X: -40000000
+        Y: -15999999
   m_CompositePaths:
     m_Paths:
-    - - {x: -4.000029, y: -1.5999999}
-      - {x: -4.0000253, y: 6.4000106}
-      - {x: -5.60001, y: 6.3999753}
-      - {x: -5.599971, y: -1.5999999}
     - - {x: 6.3999715, y: -1.5999999}
-      - {x: 6.3999753, y: 6.4000106}
-      - {x: 4.7999897, y: 6.3999753}
+      - {x: 6.3999715, y: 6.4000006}
+      - {x: 4.7999997, y: 6.3999715}
       - {x: 4.800029, y: -1.5999999}
+    - - {x: -4.000029, y: -1.5999999}
+      - {x: -4.000029, y: 6.4000006}
+      - {x: -5.6, y: 6.3999715}
+      - {x: -5.599971, y: -1.5999999}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1537585686
@@ -2048,6 +2016,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2681619933977640722, guid: ebacb303a8e9b45f49f6deef0d792f91,
+        type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 4041731223842272298, guid: f79bcde516e9a443ebbd5f02a7659e61,
+        type: 3}
     - target: {fileID: 2681619933977640727, guid: ebacb303a8e9b45f49f6deef0d792f91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2056,7 +2030,7 @@ PrefabInstance:
     - target: {fileID: 2681619933977640727, guid: ebacb303a8e9b45f49f6deef0d792f91,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2681619933977640727, guid: ebacb303a8e9b45f49f6deef0d792f91,
         type: 3}
@@ -2102,6 +2076,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681619933977640727, guid: ebacb303a8e9b45f49f6deef0d792f91,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681619933977640727, guid: ebacb303a8e9b45f49f6deef0d792f91,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2681619933977640750, guid: ebacb303a8e9b45f49f6deef0d792f91,
         type: 3}

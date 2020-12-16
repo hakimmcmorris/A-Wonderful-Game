@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{B4CD219B-90E5-A3E0-7665-28B5A293815C}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerMovement.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="149" Column="112" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="132" Column="86" />
       <File FileName="Assets/Scripts/CameraScript.cs" />
       <File FileName="Assets/Scripts/WallTrigger.cs" />
-      <File FileName="Assets/Scripts/Trampoline.cs" Line="7" Column="10" />
+      <File FileName="Assets/Scripts/Trampoline.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d8ecf9ae-3745-4173-bc8b-a10aaef12631" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3713930e-7397-442b-b4b2-db396d7a80e8" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

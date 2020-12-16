@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D PlayerRB;
     SpriteRenderer PlayerSprite;
     Animator PlayerAnimator;
+    [SerializeField] ParticleSystem particles;
 
     public float speed;
     public LayerMask layerGround;
@@ -36,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
         Move();
         isGrounded = IsGrounded();
         onWall = IsOnWall();
+
+        
 
         if (onWall && PlayerRB.velocity.y < -1.99f)
         {
@@ -160,5 +163,10 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - 0.8f, 0));
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + 0.57f, transform.position.y, 0));
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x - 0.6f, transform.position.y, 0));
+    }
+
+    void CopyAndStickParticle()
+    {
+
     }
 }
