@@ -127,6 +127,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2681619934727531441}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1248944390 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5032784689163904654, guid: ebacb303a8e9b45f49f6deef0d792f91,
+    type: 3}
+  m_PrefabInstance: {fileID: 2681619934727531441}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1289256186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,17 +2026,21 @@ PrefabInstance:
         type: 3}
       propertyPath: particles
       value: 
-      objectReference: {fileID: 4041731223842272298, guid: f79bcde516e9a443ebbd5f02a7659e61,
+      objectReference: {fileID: 1248944390}
+    - target: {fileID: 2681619933977640722, guid: ebacb303a8e9b45f49f6deef0d792f91,
         type: 3}
+      propertyPath: particlesDust
+      value: 
+      objectReference: {fileID: 1248944390}
     - target: {fileID: 2681619933977640727, guid: ebacb303a8e9b45f49f6deef0d792f91,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 2681619933977640727, guid: ebacb303a8e9b45f49f6deef0d792f91,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 2681619933977640727, guid: ebacb303a8e9b45f49f6deef0d792f91,
         type: 3}
@@ -2091,6 +2101,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032784689163904652, guid: ebacb303a8e9b45f49f6deef0d792f91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebacb303a8e9b45f49f6deef0d792f91, type: 3}

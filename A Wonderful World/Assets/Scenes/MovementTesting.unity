@@ -1497,6 +1497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a265e4ec94e4a689f41819fdf92f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particlesDust: {fileID: 0}
   speed: 5
   layerGround:
     serializedVersion: 2

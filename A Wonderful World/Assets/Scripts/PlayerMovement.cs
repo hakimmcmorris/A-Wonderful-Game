@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D PlayerRB;
     SpriteRenderer PlayerSprite;
     Animator PlayerAnimator;
-    [SerializeField] ParticleSystem particles;
+    [SerializeField] ParticleSystem particlesDust;
 
     public float speed;
     public LayerMask layerGround;
@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public int jumpCount;
     int jumpForce;
     bool onWall;
+    RaycastHit2D hit1;
+    RaycastHit2D hit2;
 
     private void Start()
     {
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         jumpCount = 0;
         jumpForce = 10;
         onWall = false;
+        particlesDust.enableEmission = false;
     }
 
     // Update is called once per frame
@@ -43,8 +46,25 @@ public class PlayerMovement : MonoBehaviour
         if (onWall && PlayerRB.velocity.y < -1.99f)
         {
             PlayerRB.velocity = new Vector2(PlayerRB.velocity.x, -2);
-            jumpCount = 0;
+            jumpCount = 1;
+
+            if (hit1)
+            {
+                particlesDust.transform.position = new Vector3(this.transform.position.x + (0.09f * 5), this.transform.position.y - (0.15f * 5), 0);
+            } else
+            {
+                particlesDust.transform.position = new Vector3(this.transform.position.x - (0.1f * 5), this.transform.position.y - (0.15f * 5), 0);
+            }
+
+
+            particlesDust.enableEmission = true;
+
         }
+        else if (particlesDust.isEmitting)
+        {
+            particlesDust.enableEmission = false;
+        }
+
 
         if (isGrounded && jumpCount >= 2)
         {
@@ -132,8 +152,8 @@ public class PlayerMovement : MonoBehaviour
     {
         LayerMask layerWall = LayerMask.GetMask("Wall");
 
-        RaycastHit2D hit1 = Physics2D.Raycast(transform.position, Vector2.right, 0.57f, layerWall);
-        RaycastHit2D hit2 = Physics2D.Raycast(transform.position, Vector2.left, 0.6f, layerWall);
+        hit1 = Physics2D.Raycast(transform.position, Vector2.right, 0.57f, layerWall);
+        hit2 = Physics2D.Raycast(transform.position, Vector2.left, 0.6f, layerWall);
 
         if (hit1 || hit2)
         {
