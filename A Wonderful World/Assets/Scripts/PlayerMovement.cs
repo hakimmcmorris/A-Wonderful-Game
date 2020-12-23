@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public LayerMask layerGround;
     public bool isJumping;
-    bool isGrounded;
+    public bool isGrounded;
     float maxGravityScale;   
     public int jumpCount;
     int jumpForce;
@@ -136,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.8f, layerGround);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.85f, layerGround);
 
         if (hit && (jumpCount > 1 || PlayerRB.velocity.y <= 0f))
         {
@@ -180,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.color = Color.red;
 
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - 0.8f, 0));
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - 0.85f, 0));
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + 0.57f, transform.position.y, 0));
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x - 0.6f, transform.position.y, 0));
     }
