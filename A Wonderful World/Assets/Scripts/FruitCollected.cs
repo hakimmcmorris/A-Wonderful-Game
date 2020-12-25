@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class FruitCollected : MonoBehaviour
 {
-    [SerializeField] Animator fruitAnimator;
-
+    Animator fruitAnimator;
     bool collected;
+    Spin spinComponent;
 
 
     // Start is called before the first frame update
@@ -14,6 +14,7 @@ public class FruitCollected : MonoBehaviour
     {
         collected = false;
         fruitAnimator = GetComponent<Animator>();
+        spinComponent = GetComponent<Spin>();
     }
 
     // Update is called once per frame
@@ -31,9 +32,10 @@ public class FruitCollected : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && !collected)
         {
-            transform.localScale -= new Vector3(2, 2, 0);
+            spinComponent.enabled = false;
+            transform.rotation = new Quaternion(0, 0, 0, 0);
             collected = true;
-            Destroy(gameObject, fruitAnimator.GetCurrentAnimatorClipInfo(0).Length);
+            Destroy(gameObject, 0.5f);
         }
     }
 }
