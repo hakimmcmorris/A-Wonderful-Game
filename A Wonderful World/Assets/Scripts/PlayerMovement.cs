@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D PlayerRB;
+    public int PlayerHealth;
     SpriteRenderer PlayerSprite;
     Animator PlayerAnimator;
     [SerializeField] ParticleSystem particlesDust;
@@ -17,12 +18,18 @@ public class PlayerMovement : MonoBehaviour
     public int jumpCount;
     int jumpForce;
     bool onWall;
+    public bool hurt;
+    public float hurtTimer;
+    public float maxHurtTimer;
+    public int pushBackForce;
+    public float groundedDistance;
     RaycastHit2D hit1;
     RaycastHit2D hit2;
 
     private void Start()
     {
         PlayerRB = GetComponent<Rigidbody2D>();
+        PlayerHealth = 10;
         PlayerSprite = GetComponent<SpriteRenderer>();
         PlayerAnimator = GetComponent<Animator>();
         maxGravityScale = PlayerRB.gravityScale;
@@ -32,12 +39,29 @@ public class PlayerMovement : MonoBehaviour
         jumpForce = 10;
         onWall = false;
         particlesDust.enableEmission = false;
+        hurt = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if (!hurt)
+        {
+            Move();
+        }
+        else
+        {
+            hurtTimer -= Time.deltaTime;
+        }
+
+        if (hurtTimer <= 0)
+        {
+            hurt = false;
+            hurtTimer = maxHurtTimer;
+        }
+        
+        
+
         isGrounded = IsGrounded();
         onWall = IsOnWall();
 
@@ -102,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerAnimator.SetBool("IsGrounded", isGrounded);
         PlayerAnimator.SetInteger("JumpCount", jumpCount);
         PlayerAnimator.SetBool("OnWall", IsOnWall());
+        //PlayerAnimator.SetBool("Hurt", hurt);
     }
 
     private void Move()
@@ -136,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.85f, layerGround);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundedDistance, layerGround);
 
         if (hit && (jumpCount > 1 || PlayerRB.velocity.y <= 0f))
         {
@@ -176,17 +201,26 @@ public class PlayerMovement : MonoBehaviour
         return false;
     }
 
+    public void TakeDamage(int dmg, Vector3 transformP)
+    {
+        PlayerHealth -= dmg;
+        hurt = true;
+        BounceOff(transformP);
+    }   
+
+    void BounceOff(Vector3 transformP)
+    {
+        Vector3 direction = transformP - transform.position;
+        direction = -direction.normalized;
+        PlayerRB.velocity = new Vector2(direction.x, direction.y) * pushBackForce;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
 
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - 0.85f, 0));
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - groundedDistance, 0));
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + 0.57f, transform.position.y, 0));
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x - 0.6f, transform.position.y, 0));
-    }
-
-    void CopyAndStickParticle()
-    {
-
     }
 }

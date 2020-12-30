@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\EndCheckpoint.cs" />
     <Compile Include="Assets\Scripts\FruitCollected.cs" />
+    <Compile Include="Assets\Scripts\HurtPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Spin.cs" />
     <Compile Include="Assets\Scripts\Trampoline.cs" />
