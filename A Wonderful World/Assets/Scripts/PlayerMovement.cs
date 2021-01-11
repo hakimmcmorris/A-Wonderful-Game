@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     float maxGravityScale;   
     public int jumpCount;
-    int jumpForce;
+    public int jumpForce;
     bool onWall;
     public bool hurt;
     public float hurtTimer;
@@ -111,9 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount <= 1)
         {
-            PlayerRB.velocity = Vector2.up * jumpForce;
-            isJumping = true;
-            jumpCount++;
+            Jump();
         }
 
     }
@@ -163,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundedDistance, layerGround);
 
-        if (hit && (jumpCount > 1 || PlayerRB.velocity.y <= 0f))
+        if (hit)
         {
             isJumping = false;
             jumpCount = 0;
@@ -213,6 +211,13 @@ public class PlayerMovement : MonoBehaviour
         Vector3 direction = transformP - transform.position;
         direction = -direction.normalized;
         PlayerRB.velocity = new Vector2(direction.x, direction.y) * pushBackForce;
+    }
+
+    void Jump()
+    {
+        PlayerRB.velocity = Vector2.up * jumpForce;
+        isJumping = true;
+        jumpCount++;
     }
 
     private void OnDrawGizmos()

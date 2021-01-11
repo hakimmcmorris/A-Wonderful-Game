@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2681619933977640722, guid: ebacb303a8e9b45f49f6deef0d792f91,
+        type: 3}
+      propertyPath: groundedDistance
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2681619933977640727, guid: ebacb303a8e9b45f49f6deef0d792f91,
         type: 3}
       propertyPath: m_LocalPosition.x
