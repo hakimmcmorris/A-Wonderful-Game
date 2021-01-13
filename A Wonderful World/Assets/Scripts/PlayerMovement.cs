@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxHurtTimer;
     public int pushBackForce;
     public float groundedDistance;
+ 
     RaycastHit2D hit1;
     RaycastHit2D hit2;
 
@@ -114,6 +115,8 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
+        
+
     }
 
     private void FixedUpdate()
@@ -161,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundedDistance, layerGround);
 
-        if (hit)
+        if (hit && PlayerRB.velocity.y <= 0)
         {
             isJumping = false;
             jumpCount = 0;
@@ -218,6 +221,8 @@ public class PlayerMovement : MonoBehaviour
         PlayerRB.velocity = Vector2.up * jumpForce;
         isJumping = true;
         jumpCount++;
+
+        
     }
 
     private void OnDrawGizmos()

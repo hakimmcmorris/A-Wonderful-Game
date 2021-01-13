@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BetterJump.cs" />
+    <Compile Include="Assets\Scripts\BoxOutline.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\EndCheckpoint.cs" />
     <Compile Include="Assets\Scripts\FruitCollected.cs" />

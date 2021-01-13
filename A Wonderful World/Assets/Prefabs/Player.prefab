@@ -122,20 +122,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHealth: 0
   particlesDust: {fileID: 5032784689163904654}
-  speed: 8
+  speed: 6
   layerGround:
     serializedVersion: 2
-    m_Bits: 1280
+    m_Bits: 5376
   isJumping: 0
   isGrounded: 0
   jumpCount: 0
+  jumpForce: 0
   hurt: 0
-  hurtTimer: 0
-  maxHurtTimer: 0
-  pushBackForce: 0
-  groundedDistance: 0
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
+  hurtTimer: 0.2
+  maxHurtTimer: 0.2
+  pushBackForce: 7
+  groundedDistance: 0.77
 --- !u!50 &2681619933977640723
 Rigidbody2D:
   serializedVersion: 4
