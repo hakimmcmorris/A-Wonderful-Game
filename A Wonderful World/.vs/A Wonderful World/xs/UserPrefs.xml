@@ -1,21 +1,20 @@
 ﻿<Properties StartupConfiguration="{B4CD219B-90E5-A3E0-7665-28B5A293815C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BoxOutline.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerMovement.cs">
     <Files>
       <File FileName="Assets/Scripts/PlayerMovement.cs" Line="167" Column="20" />
-      <File FileName="Assets/Scripts/CameraScript.cs" />
       <File FileName="Assets/Scripts/WallTrigger.cs" />
       <File FileName="Assets/Scripts/Trampoline.cs" />
       <File FileName="Assets/Scripts/EndCheckpoint.cs" />
       <File FileName="Assets/Scripts/FruitCollected.cs" />
       <File FileName="Assets/Scripts/Spin.cs" />
       <File FileName="Assets/Scripts/HurtPlayer.cs" />
-      <File FileName="Assets/Scripts/BetterJump.cs" Line="10" Column="43" />
-      <File FileName="Assets/Scripts/BoxOutline.cs" Line="21" Column="9" />
+      <File FileName="Assets/Scripts/BetterJump.cs" />
+      <File FileName="Assets/Scripts/BoxOutline.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4a0b8b6f-2fe9-4d50-89cc-66785c767cf2" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f9e0b340-bbcc-472e-96e2-531ad2f5cd29" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
